@@ -5,6 +5,7 @@ import com.thoughtmechanix.organization.repository.OrganizationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -14,7 +15,10 @@ public class OrganizationService {
 
 
     public Organization getOrg(String organizationId) {
-        return orgRepository.findById(organizationId);
+      Optional<Organization> organization = orgRepository.findById(organizationId);
+        if (!organization.isPresent())
+          throw new NullPointerException("organizationId-" + organizationId);
+        return organization.get();
     }
 
     public void saveOrg(Organization org){
@@ -29,6 +33,6 @@ public class OrganizationService {
     }
 
     public void deleteOrg(String orgId){
-        orgRepository.delete( orgId);
+        orgRepository.deleteById( orgId);
     }
 }
