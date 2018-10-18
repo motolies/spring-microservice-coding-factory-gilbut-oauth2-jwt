@@ -9,7 +9,7 @@ CREATE  TABLE users (
   PRIMARY KEY (user_name));
 
 CREATE TABLE user_roles (
-  user_role_id SERIAL NOT NULL,
+  user_role_id SERIAL,
   user_name varchar(100) NOT NULL,
   role varchar(100) NOT NULL,
   PRIMARY KEY (user_role_id));

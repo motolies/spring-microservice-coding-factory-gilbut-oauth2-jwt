@@ -3,6 +3,7 @@ security:
   oauth2:
    resource:
       userInfoUri: http://localhost:8901/auth/user
+      # token-type: Bearer
 
 eureka:
   instance:
@@ -17,5 +18,5 @@ eureka:
 logging:
   level:
     com.netflix: WARN
-    org.springframework.web: WARN
+    org.springframework.web: DEBUG
     com.thoughtmechanix: DEBUG
