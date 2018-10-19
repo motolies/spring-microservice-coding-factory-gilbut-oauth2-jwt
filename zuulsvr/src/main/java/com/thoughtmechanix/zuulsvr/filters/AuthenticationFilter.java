@@ -31,7 +31,7 @@ public class AuthenticationFilter extends ZuulFilter {
 
     @Override
     public String filterType() {
-        return filterUtils.PRE_FILTER_TYPE;
+        return FilterUtils.PRE_FILTER_TYPE;
     }
 
     @Override

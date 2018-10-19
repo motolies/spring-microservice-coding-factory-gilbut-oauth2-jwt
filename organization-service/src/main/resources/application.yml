@@ -1,12 +1,3 @@
-spring:
-  application:
-    name: organizationservice
-  profiles:
-    active:
-      default
-  cloud:
-    config:
-      enabled: true
 
 #security:
 #  oauth2:
@@ -17,7 +8,7 @@ spring:
 logging:
   level:
     com.netflix: WARN
-    org.springframework.web: WARN
+    org.springframework.web: DEBUG
     com.thoughtmechanix: DEBUG
 
 

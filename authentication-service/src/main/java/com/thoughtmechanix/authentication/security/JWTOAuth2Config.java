@@ -12,7 +12,7 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import java.util.Arrays;
 
 @Configuration
@@ -57,7 +57,7 @@ public class JWTOAuth2Config extends AuthorizationServerConfigurerAdapter {
 
         clients.inMemory()
                 .withClient("eagleeye")
-                .secret("thisissecret")
+                .secret(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode("thisissecret"))
                 .authorizedGrantTypes("refresh_token", "password", "client_credentials")
                 .scopes("webclient", "mobileclient");
     }

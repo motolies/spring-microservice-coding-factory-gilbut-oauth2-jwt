@@ -76,7 +76,7 @@ public class LicenseService {
                      @HystrixProperty(name="metrics.rollingStats.numBuckets", value="5")}
     )
     public List<License> getLicensesByOrg(String organizationId){
-        randomlyRunLong();
+        // randomlyRunLong();
 
         return licenseRepository.findByOrganizationId(organizationId);
     }
@@ -103,7 +103,7 @@ public class LicenseService {
     }
 
     public void deleteLicense(License license){
-        licenseRepository.delete( license.getLicenseId());
+        licenseRepository.delete( license);
     }
 
 }
