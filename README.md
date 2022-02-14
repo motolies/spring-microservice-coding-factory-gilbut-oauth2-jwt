@@ -1,3 +1,8 @@
+# 브랜치에 JWT 사용 샘플이 있다.
+
+
+---
+
 # Introduction
 Welcome to Spring Microservices in Action, Chapter 7.  Chapter 7 demonstrates how to build security with your services using Spring Cloud Security.  In this chapter we build an OAUth2 Authentication service using OAuth2.  This chapter has two branches of code.
 
